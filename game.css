@@ -29,9 +29,7 @@ p {
     font-size: 16px;
 }
 
-span {
-    font-weight: bold;
-}
+
 
 .information,
 .controlls,
@@ -82,4 +80,64 @@ span {
     font-family: 'Pacifico', cursive;
     font-size: 35px;
     margin-left: 230px;
+}
+
+
+/*-------Estilos login---------*/
+#login {
+
+    color: white; 
+    padding: 30px; 
+    border-radius: 10px; 
+    width: 400px; 
+    margin: 0 auto; 
+    background: black;
+    opacity: .7;
+}
+
+#login h1 {
+    font-size: 42px; 
+    margin-bottom: 50px;
+}
+
+#login h2 {
+    font-size: 20px; 
+    margin-bottom: 20px; 
+}
+
+#login input[type="email"],
+#login input[type="password"],
+#login button {
+    display: block; 
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 20px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    background-color: #fff; 
+    color: #333; 
+}
+
+#login button {
+    background-color: #955b89; 
+    color: white; 
+    cursor: pointer; 
+    width: 50%;
+    margin: auto;
+    font-size: 15px;
+    margin-bottom: 70px;
+}
+
+#login button:hover {
+    background-color: #a942ab; 
+}
+
+
+.signup , .login{
+    margin-left: 50px;
+    font-size: 18px;
+    text-decoration: none;
+    border: 3px solid #955b89;
+    color:#a942ab ;
+    border-radius: 10%;
 }

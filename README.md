@@ -1,7 +1,7 @@
 # The Cave
 *Proyecto Desarrollo de Videojuegos Mediante Tecnologías Web*
 
-[Iniciar juego](https://fabricto.github.io/DIV_Game/)
+[Iniciar juego](https://fabriciouem.github.io/juegobd/)
 
 ## 1. Descripción del juego
 __Controles__
@@ -27,7 +27,7 @@ Para el desarrollo del juego se han empleado principalmente las siguientes herra
 Para el diseñar el juego nos hemos inspirado en Donkey Kong (1981) y Super Meat Boy.
 
 ## 2. Página de gestión del proyecto
-https://github.com/fabricto/DIV_Game
+https://github.com/FabricioUEM/juegobd
 
 ## 3. Página web pública del juego
-https://fabricto.github.io/DIV_Game/
+https://fabriciouem.github.io/juegobd/

@@ -5,19 +5,29 @@ import Mundo3 from './src/mundo3.js'
 import Mundo4 from './src/mundo4.js'
 import Mundo5 from './src/mundo5.js'
 import Final from './src/final.js'
+
+import Signup from "./src/signup.js";
+import Login from "./src/login.js";
 export default class Game extends Phaser.Scene {
     constructor() {
         super({ key: 'main' });
     }
+    preload(){
+ // Las escenas del juego
+ this.scene.add('Final', new Final);
+ this.scene.add('Mundo5', new Mundo5);
+ this.scene.add('Mundo4', new Mundo4);
+ this.scene.add('Mundo3', new Mundo3);
+ this.scene.add('Mundo2', new Mundo2);
+ this.scene.add('Mundo1', new Mundo1);
+ this.scene.add("Menu", new Menu);
+
+ this.scene.add("Signup", new Signup());
+ this.scene.add("Login", new Login());
+
+    }
     create() {
-        // Las escenas del juego
-        this.scene.add('Final', new Final);
-        this.scene.add('Mundo5', new Mundo5);
-        this.scene.add('Mundo4', new Mundo4);
-        this.scene.add('Mundo3', new Mundo3);
-        this.scene.add('Mundo2', new Mundo2);
-        this.scene.add('Mundo1', new Mundo1);
-        this.scene.add("Menu", new Menu);
-        this.scene.start("Menu");
+       
+        this.scene.start("Login");
     }
 }
