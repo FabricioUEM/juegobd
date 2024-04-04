@@ -21,35 +21,46 @@
                 <a class="link" href="#information">Information</a>
                 <a class="link" href="#controlls">Controlls</a>
                 <a class="link" href="#about">About</a>
-                <a class="link" href="https://github.com/FabricioUEM/juegobd"><img class="github" src="./images/gith.png" /> GitHub</a>
+                <a class="link" href="https://github.com/FabricioUEM/juegobd"><img class="github"
+                        src="./images/gith.png" /> GitHub</a>
             </div>
         </div>
         <div id="parent" class="contenido">
             <script type="module" class="juego">
-                import Game from './game.js'; var config = { type: Phaser.AUTO, width: 1056, height: 704, dom: { createContainer: true }, parent: 'parent', pixelArt: true, input: { gamepad: true }, scale: { autoCenter: Phaser.Scale.CENTER_BOTH }, scene: [Game], physics: { default: 'arcade', arcade:
-                { gravity: { y: 0}, debug: false } } }; new Phaser.Game(config);
+                import Game from './game.js'; var config = {
+                    type: Phaser.AUTO, width: 1056, height: 704, dom: { createContainer: true }, parent: 'parent', pixelArt: true, input: { gamepad: true }, scale: { autoCenter: Phaser.Scale.CENTER_BOTH }, scene: [Game], physics: {
+                        default: 'arcade', arcade:
+                            { gravity: { y: 0 }, debug: false }
+                    }
+                }; new Phaser.Game(config);
             </script>
         </div>
-        <div class="information" id="information">
-            <h1 class="title">Information</h1>
-            <p><span>Title:</span> The Cave</p>
-            <p><span>Genre:</span> 2D Platform</p>
-            <p><span>Platform:</span> Web</p>
-            <p><span>Public:</span> All public</p>
-            <p><span>Developer:</span></p>
-        </div>
-        <div class="controlls" id="controlls">
-            <h1 class="title">Controlls</h1>
-            <p><span>UP:</span> Jump/Wall jump</p>
-            <p><span>LEFT:</span> Move left</p>
-            <p><span>RIGHT:</span> Move right</p>
-            <p><span>LEFT(IN WALL):</span> Slide down the wall</p>
-            <p><span>RIGHT(IN WALL):</span> Slide down the wall</p>
-        </div>
-        <div class="about" id="about">
-            <h1 class="title">About the project</h1>
+        <div class="footer">
+            <div class="information column-33" id="information">
+                <h1 class="title">Information</h1>
+                <p><span>Title:</span> The Cave</p>
+                <p><span>Genre:</span> 2D Platform</p>
+                <p><span>Platform:</span> Web</p>
+                <p><span>Public:</span> All public</p>
+                <p><span>Developer:</span></p>
+            </div>
+            <div class="controlls column-33" id="controlls">
+               
+                    <h1 class="title">Controlls</h1>
+                <p><span>UP:</span> Jump/Wall jump</p>
+                <p><span>LEFT:</span> Move left</p>
+                <p><span>RIGHT:</span> Move right</p>
+                <p><span>LEFT(IN WALL):</span> Slide down the wall</p>
+                <p><span>RIGHT(IN WALL):</span> Slide down the wall</p>
+                
+                
+            </div>
+            <div class="about column-33" id="about">
+                <h1 class="title">About the project</h1>
+            </div>
         </div>
     </div>
+   
 </body>
 
 </html>
