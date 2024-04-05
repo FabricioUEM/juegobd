@@ -17,7 +17,7 @@ export default class Menu extends Phaser.Scene {
         this.imageninicio = this.add.image(this.width / 2, this.height / 2, 'inicio').setOrigin(0.5).setScale(1.75);
         this.titulo = this.add.image(this.width / 2, this.height / 6, 'titulo').setOrigin(0.5);
         this.boton = this.add.image(this.width / 2, this.height / 1.75, 'boton').setInteractive().setScale(0.5);
-        this.boton.on('pointerdown', () => this.scene.start('Mundo1', { vida: 5, puntos: 0 }));
+        this.boton.on('pointerdown', () => this.scene.start('Mundo2', { vida: 5, puntos: 0, contadorSegundos:0 }));
     }
 
 }

@@ -34,7 +34,7 @@ export default class Comun extends Phaser.Scene {
     }
 
 
-    crear(keyMapa, keyMundo, keyNexMundo, numPinchos, numFuego, vida, puntos, xG, yG) {
+    crear(keyMapa, keyMundo, keyNexMundo, numPinchos, numFuego, vida, puntos, xG, yG, contadorSegundos) {
         // Obtenemos la información del mundo
         this.nCorazones = vida;
         this.xGuy = xG;
@@ -44,6 +44,17 @@ export default class Comun extends Phaser.Scene {
         this.keyMundo = keyMundo;
         this.keyNexMundo = keyNexMundo;
 
+/**----------------------------------------------------------------------------------------- */
+this.contadorSegundos = contadorSegundos;
+
+this.tiempo = this.scene.time.addEvent({
+    delay: 1000, // Actualizar cada segundo
+    callback: this.actualizarContador,
+    callbackScope: this,
+    loop: true // Repetir indefinidamente
+});
+/**----------------------------------------------------------------------------------------- */
+        
         // Añadimos e iniciamos la música
         this.musica = this.scene.sound.add('musica', { loop: true });
         this.musica.play();
@@ -219,7 +230,7 @@ export default class Comun extends Phaser.Scene {
             }
             else{
                 // Si aún conservamos un corazón volvemos a empezar el nivel
-                this.scene.scene.start(this.keyMundo, {vida: this.nCorazones, puntos: this.puntosInicio});
+                this.scene.scene.start(this.keyMundo, {vida: this.nCorazones, puntos: this.puntosInicio, contadorSegundos:this.contadorSegundos});
             }
             this.scene.sound.stopAll();
             this.scene.sound.play('audio_hit');
@@ -254,7 +265,7 @@ export default class Comun extends Phaser.Scene {
     exit(player, salida) {
             // Si el jugador colisiona con el portal será enviado al siguiente nivel
             // Nos llevamos la vida y puntos que tiene el personaje al terminar el nivel
-            this.scene.scene.start(this.keyNexMundo, { vida: this.nCorazones, puntos: this.puntos});
+            this.scene.scene.start(this.keyNexMundo, { vida: this.nCorazones, puntos: this.puntos,  contadorSegundos :this.contadorSegundos});
             this.scene.sound.stopAll();
             this.scene.sound.play('audio_portal');
     }
@@ -288,5 +299,10 @@ export default class Comun extends Phaser.Scene {
         this.nCorazones = this.nCorazones + n;
         this.myGruop = this.scene.add.group();
         this.createHealt(this.nCorazones);
+    }
+      /**---------------------------------------------------------------------------------------- */
+      actualizarContador() {
+        console.log("contador en actualizar: ", this.contadorSegundos);
+        this.contadorSegundos++; // Incrementar el contador de segundos
     }
 }
