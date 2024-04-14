@@ -1,3 +1,6 @@
+
+import { fetchSignIn } from './api/sign_in.js';
+
 export default class Login extends Phaser.Scene {
   constructor() {
     super({ key: "Login" });
@@ -32,26 +35,26 @@ export default class Login extends Phaser.Scene {
     loginDiv.setVisible(true);
 
     loginDiv.addListener("submit");
-
-    // Escucha el evento 'submit' para manejar el envío del formulario
-    loginDiv.on("submit", (event) => {
-      event.preventDefault(); // Previene el envío del formulario
-
-      // Obtiene los valores de los campos de entrada
+    loginDiv.on("submit", async (event) => {
+      event.preventDefault();
       const email = loginDiv.getChildByID("email").value;
       const password = loginDiv.getChildByID("password").value;
-      this.scene.start("Menu")
-      // Realiza la lógica de autenticación aquí
+      const errorMessage = loginDiv.getChildByID('errorMessage');
+      errorMessage.textContent = ''
+      const result = await fetchSignIn(email,password)
+      console.log("mi result is ", result["is_valid"])
+      if (result["is_valid"] == true) {
+        this.scene.start("Menu", {email})
+      }else{
+        errorMessage.textContent = 'Inválido usuario o contraseña';
+      }
       console.log(`email: ${email}, Password: ${password}`);
     });
 
     document.getElementById("signupLink").addEventListener(
       "click",
       (event) => {
-        // Prevenir el comportamiento predeterminado del enlace
         event.preventDefault();
-
-        // Cambiar a la escena de registro (signupScene en este ejemplo)
         this.scene.start("Signup");
       },
       false

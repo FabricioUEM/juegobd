@@ -13,21 +13,20 @@ export default class Game extends Phaser.Scene {
         super({ key: 'main' });
     }
     preload(){
- // Las escenas del juego
- this.scene.add('Final', new Final);
- this.scene.add('Mundo5', new Mundo5);
- this.scene.add('Mundo4', new Mundo4);
- this.scene.add('Mundo3', new Mundo3);
- this.scene.add('Mundo2', new Mundo2);
- this.scene.add('Mundo1', new Mundo1);
- this.scene.add("Menu", new Menu);
+    // Las escenas del juego
+    this.scene.add('Final', new Final);
+    this.scene.add('Mundo5', new Mundo5);
+    this.scene.add('Mundo4', new Mundo4);
+    this.scene.add('Mundo3', new Mundo3);
+    this.scene.add('Mundo2', new Mundo2);
+    this.scene.add('Mundo1', new Mundo1);
+    this.scene.add("Menu", new Menu);
 
- this.scene.add("Signup", new Signup());
- this.scene.add("Login", new Login());
+    this.scene.add("Signup", new Signup());
+    this.scene.add("Login", new Login());
 
     }
     create() {
-       
         this.scene.start("Login");
     }
 }
