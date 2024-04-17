@@ -1,5 +1,5 @@
 # The Cave
-*Proyecto Desarrollo de Videojuegos Mediante Tecnologías Web*
+*Proyecto Base de Datos de nueva generación: Desarrollo de Videojuegos Mediante Tecnologías Web*
 
 [Iniciar juego](https://fabriciouem.github.io/juegobd/)
 
@@ -14,6 +14,7 @@ __The Cave__ es un juego arcade 2D con scroll fijo en el que tenemos que superar
 ### 1.2 Mecánicas
 * __Puntos:__ el jugador obtendrá puntos según recoja monedas.
 * __Vidas:__ el jugador tendrá un número determinado de vidas, cada vez que el jugador impacte con pinchos o fuego perderá una vida acabando el juego al quedarse éste sin vidas.
+* __tiempo:__ el jugador tendrá que recorrer el juego en el menos tiempo posible para así obtener mejor puntuación.
 * __Progresión y superación de niveles.__
 
 ### 1.3 Herramientas

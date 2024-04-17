@@ -2,9 +2,6 @@
 CONCEPTO    
     Título: The Cave
     Género: Plataforma
-    Diseñadores:
-        Fabricio Torres Samueza
-      
     Plataforma: Web
     Sinopsis de Jugabilidad y Contenido: 
         El juego consistirá en superar una serie de obstáculos para llegar a un portal que te lleve al siguiente nivel.
