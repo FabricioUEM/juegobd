@@ -1,26 +1,27 @@
 import { API_BASE_URL } from '../config/config.js';
 // Definir la función fetchDataBestScore que realizará la solicitud HTTP
-export async function fetchSignIn(username, password) {
+export async function finalScore(email, score) {
     try {
-        const response = await fetch(`${API_BASE_URL}/login`, {
+        const response = await fetch(`${API_BASE_URL}/final-scores`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({
-                username,
-                password
+                email : email,
+                score: score,
             })
         });
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+
         const data = await response.json();
-        console.log('Datos de las mejores puntuaciones recibidos:', data);
+        console.log('Final score created successfully:', data);
         return data;
     } catch (error) {
-        console.error('Error al obtener los datos de las mejores puntuaciones:', error);
+        console.error('Error creating final score:', error);
         throw error;
     }
 }

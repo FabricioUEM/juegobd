@@ -4,7 +4,7 @@ CONCEPTO
     Género: Plataforma
     Diseñadores:
         Fabricio Torres Samueza
-        Sergio Mellado Ordoñez
+      
     Plataforma: Web
     Sinopsis de Jugabilidad y Contenido: 
         El juego consistirá en superar una serie de obstáculos para llegar a un portal que te lleve al siguiente nivel.

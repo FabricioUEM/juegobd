@@ -10,7 +10,7 @@ export default class Mundo5 extends Phaser.Scene {
         this.vida = data.vida;
         this.puntos = data.puntos;
         this.contadorSegundos = data.contadorSegundos;
-        console.log("data contador mundo 5: ",data.contadorSegundos)
+        this.email = data.email;
     }
 
     preload() {
@@ -31,7 +31,7 @@ export default class Mundo5 extends Phaser.Scene {
         this.yGuy = 50;
         this.keyMundo = 'Mundo5';
         this.keyNextMundo = 'Final'; // Fin del juego
-        this.comun.crear(this.keyMapa, this.keyMundo, this.keyNextMundo, this.numPinchos, this.numFuego, this.vida, this.puntos, this.xGuy, this.yGuy , this.contadorSegundos);
+        this.comun.crear(this.keyMapa, this.keyMundo, this.keyNextMundo, this.numPinchos, this.numFuego, this.vida, this.puntos, this.xGuy, this.yGuy , this.contadorSegundos,  this.email);
         
         // Creación del personaje
         this.virtualguy = new VirtualGuy(this, this.xGuy, this.yGuy);

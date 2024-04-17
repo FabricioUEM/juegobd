@@ -1,3 +1,4 @@
+import { fetchSignUp } from './api/sign_up.js';
 export default class Signup extends Phaser.Scene {
     constructor() {
       super({ key: "Signup" });
@@ -24,13 +25,34 @@ export default class Signup extends Phaser.Scene {
       signupDiv.addListener('submit');
   
       // Escucha el evento 'submit' para manejar el envío del formulario
-      signupDiv.on('submit', (event) => {
+      signupDiv.on('submit', async (event) => {
           event.preventDefault(); // Previene el envío del formulario
           
           // Obtiene los valores de los campos de entrada
           const email = signupDiv.getChildByID('email').value;
           const password = signupDiv.getChildByID('password').value;
-       
+          const confirmPassword = signupDiv.getChildByID("confirm-password").value;
+          const errorMessage = signupDiv.getChildByID('errorMessage');
+          errorMessage.textContent = '';
+          if (password !== confirmPassword) {
+            errorMessage.textContent = 'Las contraseñas no coinciden';
+            return;
+        }
+        
+        try {
+          const result = await fetchSignUp(email, password);
+          console.log("Resultado del registro:", result);
+          console.log("mensaje resultado; ", result)
+          if (result.msg === 'User created successfully') {
+              this.scene.start("Login");
+          } else {
+              errorMessage.textContent = 'Usuario o contraseña inválidos';
+          }
+      } catch (error) {
+        console.error("Error al intentar registrarse:", error);
+        errorMessage.textContent = 'Error al intentar registrarse';
+      }
+
           // Realiza la lógica de autenticación aquí
           console.log(`email: ${email}, Password: ${password}`);
       });

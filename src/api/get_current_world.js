@@ -7,7 +7,6 @@ export async function getCurrentWorld(email) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            mode: 'no-cors', 
             body: JSON.stringify({
                 email,
             })

@@ -1,26 +1,29 @@
 import { API_BASE_URL } from '../config/config.js';
-// Definir la función fetchDataBestScore que realizará la solicitud HTTP
-export async function fetchSignIn(username, password) {
+
+// Definir la función fetchSignUp que realizará la solicitud HTTP para registro
+export async function fetchSignUp(email, password) {
     try {
-        const response = await fetch(`${API_BASE_URL}/login`, {
+        const response = await fetch(`${API_BASE_URL}/users`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'
             },
             body: JSON.stringify({
-                username,
+                email,
                 password
             })
         });
+
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
+
         const data = await response.json();
-        console.log('Datos de las mejores puntuaciones recibidos:', data);
+        console.log('Registro exitoso:', data);
         return data;
     } catch (error) {
-        console.error('Error al obtener los datos de las mejores puntuaciones:', error);
+        console.error('Error al intentar registrarse:', error);
         throw error;
     }
 }

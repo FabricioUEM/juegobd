@@ -9,6 +9,8 @@ export default class Mundo1 extends Phaser.Scene {
         // Cargamos la información que nos viene de la anterior escena
         this.vida = data.vida;
         this.puntos = data.puntos;
+        this.contadorSegundos = data.contadorSegundos;
+        this.email = data.email;
     }
 
     preload() {
@@ -22,6 +24,7 @@ export default class Mundo1 extends Phaser.Scene {
     }
 
     create() {
+        this.isFinal = true;
         // Detalles del mapa
         this.numPinchos = [253, 257, 260, 251];
         this.numFuego = [42, 184, 640];
@@ -29,7 +32,7 @@ export default class Mundo1 extends Phaser.Scene {
         this.yGuy = 400;
         this.keyMundo = 'Mundo1';
         this.keyNextMundo = 'Mundo2';
-        this.comun.crear(this.keyMapa, this.keyMundo, this.keyNextMundo, this.numPinchos, this.numFuego, this.vida, this.puntos, this.xGuy, this.yGuy);
+        this.comun.crear(this.keyMapa, this.keyMundo, this.keyNextMundo, this.numPinchos, this.numFuego, this.vida, this.puntos, this.xGuy, this.yGuy, this.contadorSegundos, this.email,  this.isFinal);
         
         // Creación del personaje
         this.virtualguy = new VirtualGuy(this, this.xGuy, this.yGuy);
