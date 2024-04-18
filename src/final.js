@@ -2,6 +2,7 @@
 import { fetchDataBestScore } from "./api/best_scores.js";
 import { finalScore } from "./api/final_score.js";
 import { pointsCreate } from "./api/points_create.js";
+import { completeWithSpaces } from "./config/util.js";
 export default class Final extends Phaser.Scene {
   constructor() {
     super({ key: "Final" });
@@ -51,11 +52,22 @@ export default class Final extends Phaser.Scene {
             this.add.text(
               this.width / 3.1,
               this.height / 2.35 + index * 50,
-              `${index + 1}     ${
-                entry.user.email.split("@")[0]
-              }                                  ${entry.score}`,
+              completeWithSpaces(index + 1,5),
               { fontFamily: "Arial", fontSize: 24, color: "#000000" }
             );
+            this.add.text(
+              this.width / 2.8,
+              this.height / 2.35 + index * 50,
+             completeWithSpaces(entry.user.email.split("@")[0],28),
+              { fontFamily: "Arial", fontSize: 24, color: "#000000" }
+            );
+            this.add.text(
+              this.width / 1.6,
+              this.height / 2.35 + index * 50,
+              completeWithSpaces(entry.score,20),
+              { fontFamily: "Arial", fontSize: 24, color: "#000000" }
+            );
+       
           });
         });
       })
