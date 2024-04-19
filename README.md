@@ -1,7 +1,6 @@
 # The Cave
 *Proyecto Base de Datos de nueva generación: Desarrollo de Videojuegos Mediante Tecnologías Web*
 
-[Iniciar juego](https://fabriciouem.github.io/juegobd/)
 
 ## 1. Descripción del juego
 __Controles__
@@ -30,5 +29,4 @@ Para el diseñar el juego nos hemos inspirado en Donkey Kong (1981) y Super Meat
 ## 2. Página de gestión del proyecto
 https://github.com/FabricioUEM/juegobd
 
-## 3. Página web pública del juego
-https://fabriciouem.github.io/juegobd/
+
